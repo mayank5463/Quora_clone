@@ -1,0 +1,223 @@
+/* =============================================
+   QUORA-LEVEL STYLING — Create New Post Page
+   Fonts: Playfair Display + DM Sans
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bg:           #f7f4f0;
+  --surface:      #ffffff;
+  --surface-2:    #fdf9f5;
+  --border:       #e8e0d5;
+  --border-focus: #b92b27;
+  --accent:       #b92b27;
+  --accent-hover: #8f1e1b;
+  --text-1:       #1a1412;
+  --text-2:       #5a504a;
+  --text-3:       #9e9087;
+  --shadow-sm:    0 1px 4px rgba(0,0,0,0.07);
+  --shadow-md:    0 6px 32px rgba(0,0,0,0.10);
+  --radius:       14px;
+  --transition:   0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Body ---------- */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 16px 80px;
+  color: var(--text-1);
+}
+
+/* ---------- Top stripe ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, #e05a26 60%, #e0a826 100%);
+  z-index: 100;
+}
+
+/* ---------- Form Card ---------- */
+form {
+  width: 100%;
+  max-width: 560px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 44px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+  animation: fadeSlideUp 0.5s ease both;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+form:focus-within {
+  box-shadow: 0 10px 42px rgba(185,43,39,0.10);
+  border-color: #d4c0bc;
+}
+
+/* Decorative top bar inside card */
+form::before {
+  content: 'Create a Post';
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.025em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+form::after {
+  content: 'Share your thoughts with the community';
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------- Labels (using sibling selectors for feel) ---------- */
+
+/* Username input wrapper */
+input[type="text"],
+textarea {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-1);
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  margin-bottom: 16px;
+}
+
+input[type="text"] {
+  letter-spacing: 0.01em;
+}
+
+textarea {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  resize: vertical;
+  min-height: 160px;
+  margin-bottom: 24px;
+  letter-spacing: -0.005em;
+}
+
+/* Hover state */
+input[type="text"]:hover,
+textarea:hover {
+  border-color: #cfc6ba;
+  background: #fff;
+}
+
+/* Focus state */
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--border-focus);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(185,43,39,0.09);
+}
+
+/* Placeholders */
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: var(--text-3);
+  font-style: italic;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Custom scrollbar on textarea */
+textarea::-webkit-scrollbar { width: 6px; }
+textarea::-webkit-scrollbar-track { background: transparent; }
+textarea::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* ---------- Upload Button ---------- */
+button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  padding: 14px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+  letter-spacing: 0.015em;
+  box-shadow: 0 4px 18px rgba(185,43,39,0.30);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button::before {
+  content: '↑';
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(185,43,39,0.38);
+}
+
+button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(185,43,39,0.20);
+}
+
+/* ---------- br tags — collapse spacing since we use gap ---------- */
+br {
+  display: none;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  form {
+    padding: 32px 20px 26px;
+  }
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}
