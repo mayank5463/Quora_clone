@@ -9,7 +9,7 @@ This project allows users to create, read, edit, and delete posts just like a si
 
 ## 🚀 Features
 
-- View all posts
+- View all posts in the quora style
 - Create a new post
 - Edit existing post
 - Delete post
