@@ -19,7 +19,7 @@ This project allows users to create, read, edit, and delete posts just like a si
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack ,Tools and Frameworks Used
 
 - Node.js
 - Express.js
