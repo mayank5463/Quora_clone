@@ -15,7 +15,7 @@ This project allows users to create, read, edit, and delete posts just like a si
 - Delete post
 - Unique ID for every post in the quora way
 - Clean UI with EJS templates
-- RESTful routing
+- RESTful routing for the differnet routes in the projects
 
 ---
 
