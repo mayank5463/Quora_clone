@@ -1,25 +1,23 @@
 # Quora Clone (Basic)
 
-A basic **Quora Clone** web application built using **Node.js, Express.js, EJS, and CSS**.  
-This project allows users to create, read, edit, and delete posts just like a simple Q&A / posting platform.
-
-:contentReference[oaicite:0]{index=0}
+A simple **Quora-inspired CRUD web application** built with **Node.js, Express.js, EJS, and CSS**.  
+Users can create, view, edit, and delete posts through a clean interface using RESTful routes.
 
 ---
 
 ## 🚀 Features
 
-- View all posts in the quora style
-- Create a new post
-- Edit existing post
-- Delete post that you Select
-- Unique ID for every post in the quora way
-- Clean UI with EJS templates
-- RESTful routing for the differnet routes in the projects
+- View all posts in a Quora-style feed
+- Create new posts
+- Edit existing posts
+- Delete selected posts
+- Unique ID for every post
+- Clean UI using EJS templates
+- RESTful routing architecture
 
 ---
 
-## 🛠️ Tech Stack ,Tools and Frameworks Used
+## 🛠️ Tech Stack
 
 - Node.js
 - Express.js
