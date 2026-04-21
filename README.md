@@ -7,7 +7,7 @@ Users can create, view, edit, and delete posts through a clean interface using R
 
 ## 🚀 Features
 
-- View all posts in a Quora-style feed
+- View all posts 
 - Create new posts
 - Edit existing posts
 - Delete selected posts
